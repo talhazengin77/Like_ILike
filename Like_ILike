@@ -1,0 +1,36 @@
+SELECT * FROM customer
+WHERE first_name LIKE 'M%' -- firstname'i M ile başlayan
+
+SELECT * FROM customer
+WHERE first_name LIKE 'A%Y' -- A'ile başyalıp Y ile biten
+
+SELECT * FROM customer
+WHERE first_name LIKE 'A%' AND last_name LIKE 'A%' -- FİRSTNAME VE LASTNAME' İ A İLE BAŞLAYANLAR.
+
+SELECT * FROM customer
+WHERE first_name ILIKE 'a%y' -- ILIKE-> BÜYÜK HARF KÜÇÜK HARF AYIRT ETMEZ (case - insensitive)
+
+SELECT * FROM customer
+WHERE first_name LIKE 'J___d' -- ALT ÇİZGİ BİR TANE HARF İÇİN YER TUTAR.
+
+SELECT * FROM acto
+WHERE first_name LIKE ='A%'
+
+-- POSTGRESQL'DE ~~ LIKE yerine ~~* ILIKE yerine geçer
+
+--ODEV 3 
+--1 
+SELECT * FROM country 
+WHERE country ILIKE 'A%a'
+
+--2
+SELECT * FROM country 
+WHERE country ILIKE '_____n'
+
+--3
+SELECT * FROM film
+WHERE title ILIKE '%t%t%t%t%'
+
+--4
+SELECT * FROM film
+WHERE title LIKE 'C%' AND length > 90 AND rental_rate IN(2.99) 
